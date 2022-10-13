@@ -1,0 +1,22 @@
+Node<int> * takeLLInput(){
+    Node<int> *head = NULL;
+    Node<int> *tail = NULL;
+    int data ;
+    cin>>data;
+    //we can take size of LL or say that if data = -1 then it is our last data
+    while(data!=-1){
+        Node<int>* newNode = new Node<int> (data);
+        //check if input data is first node
+        if(head==NULL){
+            head = newNode;
+            tail = newNode;
+        }
+        else{
+            tail->next = newNode;
+            tail = newNode;
+        }
+        cin>>data;
+
+    }
+    return head;
+}
