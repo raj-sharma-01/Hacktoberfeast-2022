@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define mod 1000000007
+using namespace std;
+
+//template t gives us authority to provide our own data type, it may be int or string etc.
+template<typename T>
+class Node{
+    public:
+    T data;
+    Node * next;
+//constructor to ensure that if any object is made from the class it's mandatory to pass data for it.
+    Node(T data){
+        this->data = data;
+        next = NULL;
+
+    }
+};
+void print(Node<int> *head){
+    while(head!=NULL){
+        cout<<head->data<<endl;
+        head = head->next;
+    }
+}
+int main(){
+    Node<int>* head = new Node<int> (10);
+    head->next = new Node<int> (20);
+    head->next->next = new Node<int> (190);
+    print(head);
+
+return 0;
+}
